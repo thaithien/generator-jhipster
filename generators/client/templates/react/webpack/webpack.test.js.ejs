@@ -21,6 +21,7 @@ const path = require('path');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const utils = require('./utils.js');
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 const ENV = 'development';
 
@@ -80,7 +81,8 @@ module.exports = {
       'process.env': {
         NODE_ENV: `'${ENV}'`
       }
-    })
+    }),
+    new SimpleProgressWebpackPlugin()
   ],
   externals: {
     cheerio: 'window',
