@@ -86,7 +86,9 @@ module.exports = (WATCH) => ({
                 }
             }
         }),
-        new SimpleProgressWebpackPlugin()
+        new SimpleProgressWebpackPlugin({
+            format: 'expanded'
+        })
     ],
     mode: 'development'
 });
